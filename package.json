@@ -1,0 +1,25 @@
+{
+  "name": "pixelic-api",
+  "version": "1.0.0",
+  "description": "A Wrapper for the Pixelic-API.",
+  "main": "./src/client",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pixelicc/Pixelic-API-Wrapper"
+  },
+  "keywords": [
+    "pixelic-api",
+    "hypixel",
+    "hypixel-api"
+  ],
+  "author": "Pixelic",
+  "license": "ISC",
+  "dependencies": {
+    "bottleneck": "^2.19.5",
+    "ioredis": "^5.3.1",
+    "node-fetch": "^3.3.1"
+  }
+}
