@@ -73,12 +73,12 @@ class Client {
   async makeRequest(url, method, type) {
     try {
       if (type === "LEADERBOARD") {
-        return await this.limiter.schedule(async () => {
+        return await this.leaderboardLimiter.schedule(async () => {
           return await fetch(`${url}?key=${this.key}`, { method: method == undefined ? "GET" : method });
         });
       }
       if (type === "REGISTER") {
-        return await this.limiter.schedule(async () => {
+        return await this.registerLimiter.schedule(async () => {
           return await fetch(`${url}?key=${this.key}`, { method: method == undefined ? "GET" : method });
         });
       }
