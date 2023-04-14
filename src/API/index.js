@@ -25,4 +25,7 @@ module.exports = {
   getAuctionsByPlayer: require("./getAuctionsByPlayer"),
   getAuctionsByProfile: require("./getAuctionsByProfile"),
   getItemHistory: require("./getItemHistory"),
+  getLeaderboard: require("./getLeaderboard"),
+  getSkyblockLeaderboard: require("./getSkyblockLeaderboard"),
+  getGuildLeaderboard: require("./getGuildLeaderboard"),
 };

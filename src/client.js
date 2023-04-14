@@ -17,7 +17,9 @@ class Client {
     utils.validateOptions(this.options);
 
     this.limiter = new Bottleneck({
-      minTime: 60000 / this.options.ratelimit,
+      reservoir: this.options.ratelimit,
+      reservoirRefreshAmount: this.options.ratelimit,
+      reservoirRefreshInterval: 60 * 1000,
       id: "PIXELIC-API-LIMITER",
 
       datastore: this.options.redis.host === undefined ? "local" : "ioredis",
@@ -31,7 +33,9 @@ class Client {
     });
 
     this.leaderboardLimiter = new Bottleneck({
-      minTime: 60000 / this.options.leaderboardRateLimit,
+      reservoir: this.options.leaderboardRateLimit,
+      reservoirRefreshAmount: this.options.leaderboardRateLimit,
+      reservoirRefreshInterval: 60 * 1000,
       id: "PIXELIC-API-LEADERBOARD-LIMITER",
 
       datastore: this.options.redis.host === undefined ? "local" : "ioredis",
@@ -45,7 +49,9 @@ class Client {
     });
 
     this.registerLimiter = new Bottleneck({
-      minTime: (5 * 60000) / this.options.registerRateLimit,
+      reservoir: this.options.registerRateLimit,
+      reservoirRefreshAmount: this.options.registerRateLimit,
+      reservoirRefreshInterval: 5 * 60 * 1000,
       id: "PIXELIC-API-REGISTER-LIMITER",
 
       datastore: this.options.redis.host === undefined ? "local" : "ioredis",
@@ -74,16 +80,16 @@ class Client {
     try {
       if (type === "LEADERBOARD") {
         return await this.leaderboardLimiter.schedule(async () => {
-          return await fetch(`${url}?key=${this.key}`, { method: method == undefined ? "GET" : method });
+          return await fetch(`${url}?key=${this.key}`, { method: method === undefined ? "GET" : method });
         });
       }
       if (type === "REGISTER") {
         return await this.registerLimiter.schedule(async () => {
-          return await fetch(`${url}?key=${this.key}`, { method: method == undefined ? "GET" : method });
+          return await fetch(`${url}?key=${this.key}`, { method: method === undefined ? "GET" : method });
         });
       }
       return await this.limiter.schedule(async () => {
-        return await fetch(`${url}?key=${this.key}`, { method: method == undefined ? "GET" : method });
+        return await fetch(`${url}?key=${this.key}`, { method: method === undefined ? "GET" : method });
       });
     } catch (error) {
       console.error(error);

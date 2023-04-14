@@ -22,4 +22,7 @@ module.exports = {
   INVALID_SKYBLOCK_ITEM: "[pixelic-api] Invalid Skyblock-Item ID!",
   INVALID_BAZAAR_PRODUCT: "[pixelic-api] This Skyblock-Item does not get sold on the Bazaar!",
   INVALID_AH_ITEM: "[pixelic-api] This Skyblock-Item is not getting sold on the Auctionhouse currently!",
+  INVALID_LEADERBOARD_TIMEFRAME: "[pixelic-api] Invalid Leaderboard timeframe!",
+  INVALID_LEADERBOARD: "[pixelic-api] Invalid Leaderboard!",
+  INVALID_LEADERBOARD_LIMIT: "[pixelic-api] Invalid Leaderboard limit!",
 };
