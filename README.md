@@ -10,7 +10,7 @@ npm i pixelic-api
 
 ```js
 const PixelicAPI = require("pixelic-api");
-const pixelicAPI = new PixelicAPI.Client("PIXELIC-API-KEY");
+const pixelicAPI = new PixelicAPI("PIXELIC-API-KEY");
 // Instructions on how to get an API-Key -> https://docs.pixelic.de
 
 // getDaily
