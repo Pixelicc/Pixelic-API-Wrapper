@@ -1,6 +1,7 @@
 const fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fetch(...args));
 const Bottleneck = require("bottleneck");
 const API = require("./API/index");
+const updater = new (require("./updater"))();
 const utils = require("./utils");
 const errors = require("./errors");
 /**
@@ -73,6 +74,10 @@ class Client {
           args
         );
       };
+    }
+
+    if (this.options.checkForUpdates) {
+      updater.checkForUpdates();
     }
   }
 

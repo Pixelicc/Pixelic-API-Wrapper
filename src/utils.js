@@ -16,6 +16,7 @@ module.exports = {
       ratelimit: options?.ratelimit || 60,
       leaderboardRateLimit: options?.leaderboardRateLimit || 10,
       registerRateLimit: options?.registerRateLimit || 5,
+      checkForUpdates: options?.checkForUpdates || true,
       redis: {
         host: options?.redis?.host,
         port: options?.redis?.port,
@@ -28,6 +29,7 @@ module.exports = {
     if (typeof options.ratelimit !== "number") throw new Error(errors.RATELIMIT_MUST_BE_A_NUMBER);
     if (typeof options.leaderboardRateLimit !== "number") throw new Error(errors.RATELIMIT_MUST_BE_A_NUMBER);
     if (typeof options.registerRateLimit !== "number") throw new Error(errors.RATELIMIT_MUST_BE_A_NUMBER);
+    if (typeof options.checkForUpdates !== "boolean") throw new Error(errors.CHECK_FOR_UPDATES_MUST_BE_A_BOOLEAN);
     if (options.redis.host !== undefined) {
       if (typeof options.redis.host !== "string") throw new Error(errors.REDIS_HOST_MUST_BE_A_STRING);
       if (typeof options.redis.port !== "number") throw new Error(errors.REDIS_PORT_MUST_BE_A_NUMBER);

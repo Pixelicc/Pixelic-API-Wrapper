@@ -3,6 +3,7 @@ module.exports = {
   INVALID_PIXELIC_API_KEY: "[pixelic-api] Unexpected error!",
   OPTIONS_MUST_BE_AN_OBJECT: "[pixelic-api] Client Options must be an Object!",
   RATELIMIT_MUST_BE_A_NUMBER: "[pixelic-api] Ratelimit Options must be Numbers!",
+  CHECK_FOR_UPDATES_MUST_BE_A_BOOLEAN: "[pixelic-api] CheckForUpdates Option must be a Boolean!",
   INVALID_UUID_OR_USERNAME: "[pixelic-api] Invalid UUID or Username!",
   INVALID_UUID: "[pixelic-api] Invalid UUID!",
   INVALID_ISOSTRING: "[pixelic-api] Invalid ISO-String!",
