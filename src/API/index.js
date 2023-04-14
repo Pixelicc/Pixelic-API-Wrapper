@@ -28,4 +28,7 @@ module.exports = {
   getLeaderboard: require("./getLeaderboard"),
   getSkyblockLeaderboard: require("./getSkyblockLeaderboard"),
   getGuildLeaderboard: require("./getGuildLeaderboard"),
+  getPositions: require("./getPositions"),
+  getSkyblockPositions: require("./getSkyblockPositions"),
+  getGuildPositions: require("./getGuildPositions"),
 };

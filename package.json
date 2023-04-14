@@ -1,6 +1,6 @@
 {
   "name": "pixelic-api",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A Wrapper for the Pixelic-API.",
   "main": "./src/client",
   "scripts": {
@@ -16,7 +16,7 @@
     "hypixel-api"
   ],
   "author": "Pixelic",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "bottleneck": "^2.19.5",
     "ioredis": "^5.3.1",

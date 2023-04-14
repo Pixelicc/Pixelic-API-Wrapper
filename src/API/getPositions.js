@@ -1,11 +1,12 @@
 const errors = require("../errors");
+const utils = require("../utils");
 
-module.exports = async function (timeframe, leaderboard, limit) {
+module.exports = async function (player, timeframe, leaderboard) {
+  if (!utils.validateUUID(player) && !utils.validateUsername(player)) return new Error(errors.INVALID_UUID_OR_USERNAME);
   if (!["lifetime", "monthly", "weekly", "daily"].includes(timeframe.toLowerCase())) return new Error(errors.INVALID_LEADERBOARD_TIMEFRAME);
   if (!["general", "bedwars", "skywars", "duels"].includes(leaderboard.toLowerCase())) return new Error(errors.INVALID_LEADERBOARD);
-  if (![1000, 100, 10].includes(limit)) return new Error(errors.INVALID_LEADERBOARD_LIMIT);
 
-  const res = await this.makeRequest(`https://api.pixelic.de/leaderboard/${timeframe.toLowerCase()}/${leaderboard.toLowerCase()}/${limit}`, "GET", "LEADERBOARD");
+  const res = await this.makeRequest(`https://api.pixelic.de/leaderboard/getpositions/${timeframe.toLowerCase()}/${leaderboard.toLowerCase()}/${player}`, "GET", "LEADERBOARD");
   const parsedRes = await res.json();
 
   if (res.status === 200) return parsedRes;

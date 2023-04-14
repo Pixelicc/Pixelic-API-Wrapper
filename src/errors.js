@@ -9,6 +9,7 @@ module.exports = {
   NOT_IN_DATABASE: "[pixelic-api] Player not found in the database!",
   GUILD_NOT_IN_DATABASE: "[pixelic-api] Guild not found in the database!",
   GUILD_MEMBER_NOT_IN_DATABASE: "[pixelic-api] Guild-Member not found in the database!",
+  INVALID_GUILDID: "[pixelic-api] Invalid GuildID!",
   ALREADY_IN_DATABASE: "[pixelic-api] Player already in the database!",
   EMPTY_DATE: "[pixelic-api] No data was found for the specified date!",
   RATELIMIT: "[pixelic-api] Ratelimit has been exceeded",
@@ -25,4 +26,7 @@ module.exports = {
   INVALID_LEADERBOARD_TIMEFRAME: "[pixelic-api] Invalid Leaderboard timeframe!",
   INVALID_LEADERBOARD: "[pixelic-api] Invalid Leaderboard!",
   INVALID_LEADERBOARD_LIMIT: "[pixelic-api] Invalid Leaderboard limit!",
+  INVALID_PROFILE_UUID: "[pixelic-api] Invalid Profile UUID!",
+  INVALID_ITEM_UUID: "[pixelic-api] Invalid Item UUID!",
+  INVALID_AUCTION_UUID: "[pixelic-api] Invalid Auction UUID!",
 };
