@@ -7,7 +7,7 @@ module.exports = async function (player) {
   const res = await this.makeRequest(`https://api.pixelic.de/player/historical/all/${player}`);
   const parsedRes = await res.json();
 
-  if (res.status === 200) return parsedRes;
+  if (res.status === 200 || res.status === 304) return parsedRes;
 
   if (res.status === 404) return new Error(errors.NOT_IN_DATABASE);
   if (res.status == 422) {

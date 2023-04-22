@@ -8,7 +8,7 @@ module.exports = async function (timeframe, item) {
   const res = await this.makeRequest(`https://api.pixelic.de/auctionhouse/history/${timeframe}/${item}`);
   const parsedRes = await res.json();
 
-  if (res.status === 200) return parsedRes;
+  if (res.status === 200 || res.status === 304) return parsedRes;
   if (res.status === 404) return new Error(errors.INVALID_AH_ITEM);
   if (res.status === 429) return new Error(errors.RATELIMIT);
 
