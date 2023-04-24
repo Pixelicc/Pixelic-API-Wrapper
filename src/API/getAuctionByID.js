@@ -1,6 +1,11 @@
 const errors = require("../errors");
 const utils = require("../utils");
 
+/**
+ * Query a specific past auction.
+ * @constructor
+ * @param {string} UUID - The UUID associated with that specific auction.
+ */
 module.exports = async function (UUID) {
   if (!utils.validateUUID(UUID)) return new Error(errors.INVALID_AUCTION_UUID);
 

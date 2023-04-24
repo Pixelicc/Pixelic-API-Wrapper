@@ -1,6 +1,11 @@
 const errors = require("../errors");
 const utils = require("../utils");
 
+/**
+ * Retrieve the most recent auctions by a skyblock profile (up to 100 **AND ONLY SELL DATA**).
+ * @constructor
+ * @param {string} profile - UUID of the profile you want to lookup.
+ */
 module.exports = async function (profile) {
   if (!utils.validateUUID(profile)) return new Error(errors.INVALID_PROFILE_UUID);
 

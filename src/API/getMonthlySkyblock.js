@@ -1,6 +1,11 @@
 const utils = require("../utils");
 const errors = require("../errors");
 
+/**
+ * Retrieve the monthly skyblock stats of a specific player (Returns the total stats from the last check).
+ * @constructor
+ * @param {string} player - IGN or UUID of the player you want to lookup.
+ */
 module.exports = async function (player) {
   if (!utils.validateUUID(player) && !utils.validateUsername(player)) return new Error(errors.INVALID_UUID_OR_USERNAME);
 

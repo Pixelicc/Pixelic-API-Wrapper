@@ -1,7 +1,13 @@
 const errors = require("../errors");
 const utils = require("../utils");
 
-module.exports = async function (guild, timeframe) {
+/**
+ * Returns all positions of a guild on leaderboards in the specified timeframe.
+ * @constructor
+ * @param {string} timeframe - The timeframe you want information about (allowed are "lifetime", "monthly", "weekly" and "daily").
+ * @param {string} guild - ID of the guild you want to lookup.
+ */
+module.exports = async function (timeframe, guild) {
   if (!utils.validateGuildID(guild)) return new Error(errors.INVALID_GUILDID);
   if (!["lifetime", "monthly", "weekly", "daily"].includes(timeframe.toLowerCase())) return new Error(errors.INVALID_LEADERBOARD_TIMEFRAME);
 

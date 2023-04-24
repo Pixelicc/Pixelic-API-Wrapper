@@ -1,6 +1,13 @@
 const utils = require("../utils");
 const errors = require("../errors");
 
+/**
+ * Retrieve stats about a tracked guild including EXP, level, guildMaster, members, EXPHistory, scaledEXPHistory, monthlyRawEXP, monthlyScaledEXP and lifetime EXPPerGame.
+ *
+ * To get the current Monthly Raw GEXP take the monthlyRawEXP key and add the current Day's raw value to it. To get the current Monthly scaled GEXP take the monthlyScaledEXP key and add the current Day's raw value to it. You can retrieve the current Day's value by calling the Hypixel API. Daily and Weekly raw and scaled GEXP should be calculated directly with the Hypixel API Data.
+ * @constructor
+ * @param {string} guild - ID of the guild you want to lookup.
+ */
 module.exports = async function (guild) {
   if (!utils.validateGuildID(guild)) return new Error(errors.INVALID_GUILDID);
 

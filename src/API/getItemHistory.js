@@ -1,6 +1,11 @@
 const errors = require("../errors");
 const utils = require("../utils");
 
+/**
+ * Query a specific item's history. Returns all past auctions about the exact same item (with the same Item-UUID).
+ * @constructor
+ * @param {string} UUID - The UUID associated with that specific item.
+ */
 module.exports = async function (UUID) {
   if (!utils.validateUUID(UUID)) return new Error(errors.INVALID_UUID);
 

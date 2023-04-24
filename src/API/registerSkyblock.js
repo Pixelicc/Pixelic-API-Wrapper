@@ -1,6 +1,11 @@
 const utils = require("../utils");
 const errors = require("../errors");
 
+/**
+ * Register a skyblock player to the Pixelic-API's tracking.
+ * @constructor
+ * @param {string} player - IGN or UUID of the player you want to register.
+ */
 module.exports = async function (player) {
   if (!utils.validateUUID(player) && !utils.validateUsername(player)) return new Error(errors.INVALID_UUID_OR_USERNAME);
 

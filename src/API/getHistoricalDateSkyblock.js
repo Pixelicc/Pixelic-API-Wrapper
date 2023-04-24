@@ -1,7 +1,13 @@
 const utils = require("../utils");
 const errors = require("../errors");
 
-module.exports = async function (player) {
+/**
+ * Retrieve the stats of a specific skyblock player on the specified date (Returns the total stats from the last check).
+ * @constructor
+ * @param {string} date - Date you want to lookup (ISO-String formatted like "2023-01-01").
+ * @param {string} player - IGN or UUID of the player you want to lookup.
+ */
+module.exports = async function (date, player) {
   if (!utils.validateUUID(player) && !utils.validateUsername(player)) return new Error(errors.INVALID_UUID_OR_USERNAME);
   if (!utils.validateISOString(timeframe.slice(timeframe.indexOf("/") + 1))) return new Error(errors.INVALID_ISOSTRING);
 

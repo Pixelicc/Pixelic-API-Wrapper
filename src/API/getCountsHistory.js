@@ -1,5 +1,10 @@
 const errors = require("../errors");
 
+/**
+ * Retrieve Hypixel's playercount history.
+ * @constructor
+ * @param {string} timeframe - The timeframe you want information about.
+ */
 module.exports = async function (timeframe) {
   if (!["hour", "day", "week", "month", "year", "alltime"].includes(timeframe)) return new Error(errors.INVALID_HISTORY_TIMEFRAME);
 

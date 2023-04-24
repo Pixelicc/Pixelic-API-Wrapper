@@ -1,6 +1,11 @@
 const utils = require("../utils");
 const errors = require("../errors");
 
+/**
+ * Register a guild to the Pixelic-API's tracking.
+ * @constructor
+ * @param {string} guild - ID of the guild you want to register.
+ */
 module.exports = async function (guild) {
   if (!utils.validateGuildID(guild)) return new Error(errors.INVALID_GUILDID);
 

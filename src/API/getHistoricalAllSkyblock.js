@@ -1,6 +1,11 @@
 const utils = require("../utils");
 const errors = require("../errors");
 
+/**
+ * Returns all collected datapoints about a specific skyblock player.
+ * @constructor
+ * @param {string} player - IGN or UUID of the player you want to lookup.
+ */
 module.exports = async function (player) {
   if (!utils.validateUUID(player) && !utils.validateUsername(player)) return new Error(errors.INVALID_UUID_OR_USERNAME);
 

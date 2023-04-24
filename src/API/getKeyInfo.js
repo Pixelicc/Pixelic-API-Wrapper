@@ -1,5 +1,8 @@
 const errors = require("../errors");
 
+/**
+ * Returns all relevant information about your Pixelic-API-Key.
+ */
 module.exports = async function () {
   const res = await this.makeRequest(`https://api.pixelic.de/key`);
   const parsedRes = await res.json();
