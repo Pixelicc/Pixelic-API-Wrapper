@@ -24,7 +24,7 @@ class Client {
       id: "PIXELIC-API-LIMITER",
 
       datastore: this.options.redis.host === undefined ? "local" : "ioredis",
-      clearDatastore: false,
+      clearDatastore: true,
       clientOptions: {
         host: this.options.redis.host,
         port: this.options.redis.port,
@@ -40,7 +40,7 @@ class Client {
       id: "PIXELIC-API-LEADERBOARD-LIMITER",
 
       datastore: this.options.redis.host === undefined ? "local" : "ioredis",
-      clearDatastore: false,
+      clearDatastore: true,
       clientOptions: {
         host: this.options.redis.host,
         port: this.options.redis.port,
@@ -56,7 +56,7 @@ class Client {
       id: "PIXELIC-API-REGISTER-LIMITER",
 
       datastore: this.options.redis.host === undefined ? "local" : "ioredis",
-      clearDatastore: false,
+      clearDatastore: true,
       clientOptions: {
         host: this.options.redis.host,
         port: this.options.redis.port,
