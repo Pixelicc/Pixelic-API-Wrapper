@@ -5,7 +5,7 @@
 ### Install
 
 ```shell
-npm i pixelic-api
+npm i pixelic-api-wrapper
 ```
 
 ```js
