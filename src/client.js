@@ -93,6 +93,9 @@ class Client {
           return await fetch(`${url}?key=${this.key}`, { method: method === undefined ? "GET" : method });
         });
       }
+      if (type === "NON-LIMITED") {
+        return await fetch(url, { method: method === undefined ? "GET" : method });
+      }
       return await this.limiter.schedule(async () => {
         return await fetch(`${url}?key=${this.key}`, { method: method === undefined ? "GET" : method });
       });
