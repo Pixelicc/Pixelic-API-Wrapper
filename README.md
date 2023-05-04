@@ -1,6 +1,6 @@
 ### Links
 
-[Discord Support](https://discord.gg/ZpuscgCayg) | [NPM](https://www.npmjs.com/package/pixelic-api) | [GitHub](https://github.com/Pixelicc/Pixelic-API-Wrapper)
+[Discord Support](https://discord.gg/ZpuscgCayg) | [NPM](https://www.npmjs.com/package/pixelic-api-wrapper) | [GitHub](https://github.com/Pixelicc/Pixelic-API-Wrapper)
 
 ### Install
 
@@ -9,7 +9,7 @@ npm i pixelic-api
 ```
 
 ```js
-const PixelicAPI = require("pixelic-api");
+const PixelicAPI = require("pixelic-api-wrapper");
 ```
 
 ### Quick Start
