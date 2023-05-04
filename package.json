@@ -1,6 +1,6 @@
 {
-  "name": "pixelic-api",
-  "version": "1.0.8",
+  "name": "pixelic-api-wrapper",
+  "version": "1.0.9",
   "description": "A Wrapper for the Pixelic-API.",
   "main": "./src/client",
   "scripts": {
