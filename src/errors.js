@@ -18,9 +18,9 @@ module.exports = {
   REDIS_PORT_MUST_BE_A_NUMBER: "[pixelic-api] Redis-Port must be a Number!",
   REDIS_USERNAME_MUST_A_BE_STRING: "[pixelic-api] Redis-Username must be a String!",
   REDIS_PASSWORD_MUST_A_BE_STRING: "[pixelic-api] Redis-Password must be a String!",
-  INVALID_HISTORY_TIMEFRAME: "[pixelic-api] Valid timeframes are : hour, day, week, month, year, alltime!",
-  INVALID_HISTORY_STAT: "[pixelic-api] Valid Stat are : playersTracked, playersTrackedSkyblock, guildsTracked, auctionsStored!",
-  INVALID_AH_HISTORY_TIMEFRAME: "[pixelic-api] Valid timeframes are : day, week, month, year, alltime!",
+  INVALID_HISTORY_TIMEFRAME: "[pixelic-api] Valid timeframes are : hour, day, week, month, year or alltime!",
+  INVALID_HISTORY_STAT: "[pixelic-api] Valid Stats are : playersTracked, playersTrackedSkyblock, guildsTracked or auctionsStored!",
+  INVALID_AH_HISTORY_TIMEFRAME: "[pixelic-api] Valid timeframes are : day, week, month, year or alltime!",
   INVALID_SKYBLOCK_ITEM: "[pixelic-api] Invalid Skyblock-Item ID!",
   INVALID_BAZAAR_PRODUCT: "[pixelic-api] This Skyblock-Item does not get sold on the Bazaar!",
   INVALID_AH_ITEM: "[pixelic-api] This Skyblock-Item is not getting sold on the Auctionhouse currently!",
@@ -30,4 +30,5 @@ module.exports = {
   INVALID_PROFILE_UUID: "[pixelic-api] Invalid Profile UUID!",
   INVALID_ITEM_UUID: "[pixelic-api] Invalid Item UUID!",
   INVALID_AUCTION_UUID: "[pixelic-api] Invalid Auction UUID!",
+  INVALID_DISTRIBUTION: "[pixelic-api] Valid distributions are : ranks, plusColor, plusPlusColor, language or chatChannel!",
 };

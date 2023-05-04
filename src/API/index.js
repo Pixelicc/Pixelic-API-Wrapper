@@ -31,4 +31,5 @@ module.exports = {
   getPositions: require("./getPositions"),
   getSkyblockPositions: require("./getSkyblockPositions"),
   getGuildPositions: require("./getGuildPositions"),
+  getDistribution: require("./getDistribution"),
 };
