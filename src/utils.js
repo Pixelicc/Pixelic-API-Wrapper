@@ -2,10 +2,17 @@ const errors = require("./errors");
 
 module.exports = {
   validateKey: (key) => {
-    if (/[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}|[0-9a-f]{12}4[0-9a-f]{19}/.test(key)) return key;
+    key = key.replace(/-/g, "");
+    if (key.length !== 32) return new Error(errors.INVALID_PIXELIC_API_KEY);
+    if (/[0-9a-f]{12}4[0-9a-f]{19}/.test(key)) return key;
     return new Error(errors.INVALID_PIXELIC_API_KEY);
   },
-  validateUUID: (UUID) => /[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}|[0-9a-f]{12}4[0-9a-f]{19}/.test(UUID),
+  validateUUID: (UUID) => {
+    UUID = UUID.replace(/-/g, "");
+    if (UUID.length !== 32) return false;
+    if (/[0-9a-f]{12}4[0-9a-f]{19}/.test(UUID)) return true;
+    return false;
+  },
   validateUsername: (Username) => /^[a-zA-Z0-9_]{2,16}$/.test(Username),
   validateISOString: (DATE) => /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/.test(DATE),
   validateGuildID: (guildID) => /^[0-9a-fA-F]{24}$/.test(guildID),
