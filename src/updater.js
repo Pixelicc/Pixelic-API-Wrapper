@@ -3,7 +3,7 @@ const fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fet
 class Updater {
   checkForUpdates() {
     try {
-      fetch("https://registry.npmjs.org/pixelic-api").then(async (packageInfo) => {
+      fetch("https://registry.npmjs.org/pixelic-api-wrapper").then(async (packageInfo) => {
         const parsedPackageInfo = await packageInfo.json();
         const latestVersion = parsedPackageInfo["dist-tags"].latest;
         const currentVersion = require("../package.json").version;
