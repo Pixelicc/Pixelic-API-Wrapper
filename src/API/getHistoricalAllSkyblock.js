@@ -9,7 +9,7 @@ const errors = require("../errors");
 module.exports = async function (player) {
   if (!utils.validateUUID(player) && !utils.validateUsername(player)) return new Error(errors.INVALID_UUID_OR_USERNAME);
 
-  const res = await this.makeRequest(`https://api.pixelic.de/player/skyblock/historical/all/${player}`);
+  const res = await this.makeRequest(`https://api.pixelic.de/player/skyblock/${player}/all`);
   const parsedRes = await res.json();
 
   if (res.status === 200 || res.status === 304) return parsedRes;

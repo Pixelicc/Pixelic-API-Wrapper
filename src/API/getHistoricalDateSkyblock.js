@@ -11,7 +11,7 @@ module.exports = async function (date, player) {
   if (!utils.validateUUID(player) && !utils.validateUsername(player)) return new Error(errors.INVALID_UUID_OR_USERNAME);
   if (!utils.validateISOString(timeframe.slice(timeframe.indexOf("/") + 1))) return new Error(errors.INVALID_ISOSTRING);
 
-  const res = await this.makeRequest(`https://api.pixelic.de/player/skyblock/historical/${date}/${player}`);
+  const res = await this.makeRequest(`https://api.pixelic.de/player/skyblock/${player}/${date}`);
   const parsedRes = await res.json();
 
   if (res.status === 200 || res.status === 304) return parsedRes;
