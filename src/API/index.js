@@ -33,4 +33,5 @@ module.exports = {
   getGuildPositions: require("./getGuildPositions"),
   getDistribution: require("./getDistribution"),
   getStatus: require("./getStatus"),
+  getYearly: require("./getYearly"),
 };
