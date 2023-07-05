@@ -1,3 +1,5 @@
+# DEPRECATED
+
 ### Links
 
 [Discord Support](https://discord.gg/ZpuscgCayg) | [NPM](https://www.npmjs.com/package/pixelic-api-wrapper) | [GitHub](https://github.com/Pixelicc/Pixelic-API-Wrapper)
